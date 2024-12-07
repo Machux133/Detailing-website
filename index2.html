@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Nazwa Firmy] - Detailng Samochodowy</title>
+    <style>
+        /* Styl globalny */
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #1e1e1e;
+            color: #fff;
+        }
+
+        header {
+            background-color: #111111;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Logo */
+        .logo {
+            width: 120px; /* Możesz dostosować szerokość logo */
+            height: auto;
+        }
+
+        /* Styl dla obrazka menu (stack.png) */
+        .menu-icon {
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+        }
+
+        /* Styl dla menu rozwijanego */
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 60px; /* Otwiera się 50px poniżej obrazka */
+            right: 0;  /* Menu pojawi się po prawej stronie */
+            background-color: #333;
+            min-width: 180px;
+            border-radius: 8px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        .dropdown a {
+            color: white;
+            padding: 10px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown a:hover {
+            background-color: #cb32ff; /* Zmieniony kolor tła na #cb32ff */
+        }
+
+        /* Styl sekcji */
+        main {
+            padding: 40px 20px;
+        }
+
+        h1, h2 {
+            color: #cb32ff; /* Zmieniony kolor nagłówków na #cb32ff */
+            text-align: center;
+        }
+
+        h2 {
+            margin-top: 30px;
+        }
+
+        p, ul, form {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .about-us, .why-choose-us, .contact, .services, .pricing, .booking {
+            margin: 40px auto;
+            max-width: 900px;
+            padding: 20px;
+            background-color: #2c2c2c;
+            border-radius: 8px;
+        }
+
+        .why-choose-us ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .why-choose-us ul li {
+            background-color: #3b3b3b;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .contact form, .booking form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact input, .contact textarea, .booking input, .booking select {
+            background-color: #444;
+            border: 1px solid #666;
+            color: #fff;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .contact button, .booking button {
+            background-color: #cb32ff; /* Zmieniony kolor przycisków na #cb32ff */
+            border: none;
+            padding: 15px;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        .contact button:hover, .booking button:hover {
+            background-color: #e76f51;
+        }
+
+        footer {
+            background-color: #000;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="#home">
+            <!-- Logo firmy (obrazek) -->
+            <img src="logo.jpg" alt="[Nazwa Firmy]" class="logo">
+        </a>
+        <!-- Menu ikona (obrazek stack.png) do rozwinięcia menu -->
+        <img src="stack.png" alt="Menu" class="menu-icon" onclick="toggleMenu()">
+    </header>
+
+    <div class="dropdown" id="dropdownMenu">
+        <!-- Lista rozwijana z linkami -->
+        <a href="#uslugi" onclick="closeMenu()">Nasze Usługi</a>
+        <a href="#cennik" onclick="closeMenu()">Cennik</a>
+        <a href="#kontakt" onclick="closeMenu()">Kontakt</a>
+    </div>
+
+    <main>
+        <section id="home" class="about-us">
+            <h1>Witamy w [Nazwa Firmy] – Profesjonalny Detailng Samochodowy</h1>
+            <p>Jesteśmy firmą specjalizującą się w profesjonalnym detailingu samochodowym. Nasza pasja do motoryzacji i dbałość o każdy detal sprawiają, że Twoje auto odzyskuje blask i doskonały wygląd. Działamy na rynku od [liczba] lat, oferując kompleksową obsługę zarówno dla właścicieli aut prywatnych, jak i firm.</p>
+        </section>
+
+        <section class="why-choose-us">
+            <h2>Dlaczego warto wybrać nas?</h2>
+            <ul>
+                <li><strong>Doświadczenie i pasja:</strong> Ponad [liczba] lat doświadczenia w branży.</li>
+                <li><strong>Profesjonalizm:</strong> Używamy tylko najlepszych produktów, aby zapewnić najwyższą jakość usługi.</li>
+                <li><strong>Indywidualne podejście:</strong> Każde auto traktujemy indywidualnie, dobierając odpowiednie metody i środki czyszczące.</li>
+            </ul>
+        </section>
+
+        <section id="uslugi" class="services">
+            <h2>Nasze Usługi</h2>
+            <p><strong>Mycie i Detailing Zewnętrzny:</strong> Mycie ręczne, dekontaminacja lakieru, polerowanie, woskowanie. Cena: [kwota]</p>
+            <p><strong>Detailing Wnętrza:</strong> Czyszczenie tapicerki, odkurzanie, pranie dywaników, pielęgnacja kokpitu. Cena: [kwota]</p>
+            <p><strong>Pielęgnacja Skóry:</strong> Czyszczenie i impregnacja tapicerki skórzanej. Cena: [kwota]</p>
+            <p><strong>Polerowanie Lakieru i Usuwanie Rys:</strong> Polerowanie i odświeżenie lakieru, usuwanie drobnych rys i zarysowań. Cena: [kwota]</p>
+            <p><strong>Powłoka Ceramiczna:</strong> Aplikacja powłoki ceramicznej dla ochrony lakieru. Cena: [kwota]</p>
+        </section>
+
+        <section id="cennik" class="pricing">
+            <h2>Cennik</h2>
+            <ul>
+                <li><strong>Mycie zewnętrzne:</strong> [kwota]</li>
+                <li><strong>Detailing wnętrza:</strong> [kwota]</li>
+                <li><strong>Pełny detailing (wnętrze + zewnątrz):</strong> [kwota]</li>
+                <li><strong>Pakiet premium (z pełnym polerowaniem):</strong> [kwota]</li>
+                <li><strong>Powłoka ceramiczna:</strong> [kwota]</li>
+            </ul>
+        </section>
+
+        <section id="kontakt" class="contact">
+            <h2>Skontaktuj się z nami!</h2>
+            <form action="mailto:kontakt@twojafirma.pl" method="POST" enctype="multipart/form-data">
+                <label for="name">Imię i Nazwisko:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Wiadomość:</label>
+                <textarea id="message" name="message" required></textarea>
+
+                <button type="submit">Wyślij wiadomość</button>
+            </form>
+        </section>
+        
+    </main>
+
+    <footer>
+        <p>&copy; 2024 [Nazwa Firmy]. Wszystkie prawa zastrzeżone.</p>
+    </footer>
+
+    <script>
+        // Funkcja do otwierania/zwijania menu
+        function toggleMenu() {
+            const dropdown = document.getElementById('dropdownMenu');
+            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+        }
+
+        // Funkcja do zamykania menu po kliknięciu w opcję
+        function closeMenu() {
+            const dropdown = document.getElementById('dropdownMenu');
+            dropdown.style.display = 'none';
+        }
+    </script>
+
+</body>
+</html>
