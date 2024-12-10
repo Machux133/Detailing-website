@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>[Nazwa Firmy] - Detailing Samochodowy</title>
+    <title>MW-TEAM Detailing </title>
     <link rel="icon" type="image/png" href="logoFavicon.png">
     <style>
         /* Global Styles */
@@ -104,6 +104,7 @@
         p, ul, form {
             font-size: 16px;
             line-height: 1.6;
+            
         }
 
         .about-us, .why-choose-us, .contact, .services, .pricing, .booking {
@@ -125,7 +126,7 @@
             padding: 10px;
             border-radius: 5px;
         }
-
+       
         .contact form, .booking form {
             display: flex;
             flex-direction: column;
@@ -154,7 +155,7 @@
         }
 
         footer {
-            background-color: #000;
+            background-color: #111111;
             color: #fff;
             padding: 10px;
             text-align: center;
@@ -211,15 +212,51 @@
 
         <section id="cennik" class="pricing">
             <h2>Cennik</h2>
+            <strong>WNĘTRZE:</strong> 
             <ul>
-                <li><strong>Mycie zewnętrzne:</strong> [kwota]</li>
-                <li><strong>Detailing wnętrza:</strong> [kwota]</li>
+                <li><strong>czyszczenie wnętrza pojazdu</strong> ............................................................................................................  od 200 zł</li>
+                <li><strong>czyszczenie tapicerki skórzanej</strong> ............................................................................................................  150 zł</li>
+                <li><strong>pranie tapicerki</strong> ........................................................................................................................................ 300 zł</li>
+            </ul>
+            <strong>KAROSERIA:</strong>
+            <ul>
+                <li><strong>mycie zewnętrzne pojazdu</strong>......................................................................................................................  100 zł</li>
+                <ul>
+                    <li>nablyszczanie lakier.......... 30 zł</li>
+                    <li>powłoka wosku ............... 100 zł</li>
+                </ul>
+                <li><strong>jednoetapowa korekta lakieru</strong> ...........................................................................................................  od 800 zł</li>
+                <ul>
+                    <li>usuwa od 40 do 60% rys na lakierze</li>
+                </ul>
+                <li><strong>dwuetapowa korekta lakieru</strong> ...........................................................................................................  od 1100 zł </li>
+                <ul>
+                    <li>usuwa od 60 do 70% rys na lakierze</li>
+                </ul>
+                <li><strong>wieloetapowa korekta lakieru</strong> .........................................................................................................  od 1700 zł </li>
+                <ul>
+                    <li>usuwa do 95% rys na lakierze</li>
+                </ul>
+            </ul>
+            <p></p>
+            
+            <strong>POWŁOKI</strong> *w cenę wliczona jest korekta lakieru
+            <ul>
+                <li><strong>roczna powłoka ceramiczna*</strong>...........................................................................................................  od 1200 zł</li>
+                <li><strong>3-letnia powłoka ceramiczna*</strong>.......................................................................................................... od 1600 zł</li>
+                <li><strong>5-letnia powłoka ceramiczna*</strong>.......................................................................................................... od 2500 zł</li>
+                <li><strong>powłoka ceramiczna na szyby</strong> ............................................................................................................... 300 zł</li>
+                <li><strong>hydroszyba</strong> .............................................................................................................................................. 100 zł </li>
+            </ul>
+            <strong>INNE</strong>
+            <ul>
+                <li><strong>pranie tapicerki meblowej </strong>............................... cena Indywidualna</li>
             </ul>
         </section>
 
         <section id="kontakt" class="contact">
             <h2>Skontaktuj się z nami!</h2>
-            <form action="mailto:kontakt@twojafirma.pl" method="POST" enctype="multipart/form-data">
+            <form action="mailto:mw.team@interia.pl" method="POST" enctype="multipart/form-data">
                 <label for="name">Imię i Nazwisko:</label>
                 <input type="text" id="name" name="name" required>
 
@@ -236,17 +273,17 @@
      <section class="contact-info">
             
             <div>
-                <p><strong>Adres:</strong> [Adres Firmy], </p>
-                <p> [Kod Pocztowy]</p>
-            </div>
+                <p><strong>Adres:</strong> Piekary 61, </p>
+                <p> 32-100 Proszowice</p>
+            </div>          
             <div>
-                <p><strong>Telefon:</strong> [Numer Telefonu]</p>
-                <p><strong> Email:</strong> kontakt@twojafirma.pl</p>
+                <p><strong>Telefon:</strong> 609 806 790</p>
+                <p><strong> Email:</strong> mw.team@interia.pl </p>
             </div>
         </section>
 
     <footer>
-        <p>&copy; 2024 [Nazwa Firmy]. Wszystkie prawa zastrzeżone.</p>
+        <p>&copy; 2024 MW-TEAM. Wszystkie prawa zastrzeżone.</p>
     </footer>
 
     <script>
@@ -259,6 +296,13 @@
             const dropdown = document.getElementById('dropdownMenu');
             dropdown.classList.remove('open');
         }
+        window.addEventListener('click', function(event) {
+            const dropdown = document.getElementById('dropdownMenu');
+            if (!dropdown.contains(event.target) && event.target !== document.querySelector('.menu-icon')) {
+                dropdown.style.display = 'none';
+                document.body.style.marginTop = '0'; 
+            }
+        });
     </script>
 
 </body>
