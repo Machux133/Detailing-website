@@ -176,6 +176,39 @@
         .contact-info div {
             width: 45%;
         }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Fade-in Animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Hover Effects */
+        .dropdown a:hover, .contact button:hover, .booking button:hover {
+            background-color: #e76f51;
+            transition: background-color 0.3s ease;
+        }
+
+        .menu-icon:hover {
+            transform: scale(1.1);
+            transition: transform 0.3s ease;
+        }
+
+        .close-button:hover {
+            background-color: #e76f51;
+            transition: background-color 0.3s ease;
+        }
     </style>
 </head>
 <body>
@@ -194,12 +227,12 @@
     </div>
 
     <main>
-        <section id="home" class="about-us">
+        <section id="home" class="about-us fade-in">
             <h1>Witamy w [Nazwa Firmy] – Profesjonalny Detailing Samochodowy</h1>
             <p>Jesteśmy firmą specjalizującą się w profesjonalnym detailingu samochodowym...</p>
         </section>
 
-        <section class="why-choose-us">
+        <section class="why-choose-us fade-in">
             <h2>Dlaczego warto wybrać nas?</h2>
             <ul>
                 <li><strong>Doświadczenie i pasja:</strong> Ponad [liczba] lat doświadczenia.</li>
@@ -210,7 +243,7 @@
 
         
 
-        <section id="cennik" class="pricing">
+        <section id="cennik" class="pricing fade-in">
             <h2>Cennik</h2>
             <strong>WNĘTRZE:</strong> 
             <ul>
@@ -254,7 +287,7 @@
             </ul>
         </section>
 
-        <section id="kontakt" class="contact">
+        <section id="kontakt" class="contact fade-in">
             <h2>Skontaktuj się z nami!</h2>
             <form action="mailto:mw.team@interia.pl" method="POST" enctype="multipart/form-data">
                 <label for="name">Imię i Nazwisko:</label>
@@ -270,7 +303,7 @@
             </form>
         </section>
     </main>
-     <section class="contact-info">
+     <section class="contact-info fade-in">
             
             <div>
                 <p><strong>Adres:</strong> Piekary 61, </p>
@@ -302,6 +335,28 @@
                 dropdown.style.display = 'none';
                 document.body.style.marginTop = '0'; 
             }
+        });
+
+        // Fade-in effect on scroll
+        const faders = document.querySelectorAll('.fade-in');
+        const appearOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) {
+                    return;
+                } else {
+                    entry.target.classList.add('visible');
+                    appearOnScroll.unobserve(entry.target);
+                }
+            });
+        }, appearOptions);
+
+        faders.forEach(fader => {
+            appearOnScroll.observe(fader);
         });
     </script>
 
